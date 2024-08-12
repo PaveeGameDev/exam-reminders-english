@@ -70,17 +70,17 @@ export default function CreateClassForm({ defaultSubjects, user }: Props) {
       className="flex flex-col space-y-4 bg-base-200 shadow-xl border border-gray-300 p-6 rounded-lg max-w-md w-full"
     >
       <label htmlFor="className" className="font-semibold">
-        Jméno třídy
+        Name of the class
       </label>
       <input
         id="className"
         name="className"
-        placeholder="Třída U - Gymnázium Opatov"
+        placeholder="Class B - Hopewell High"
         maxLength={100}
         required
         className="textarea input-bordered w-full text-lg"
       />
-      <p className="font-semibold mb-2">Předměty</p>
+      <p className="font-semibold mb-2">Subjects</p>
       <div className="w-full grid grid-cols-2 gap-x-2 gap-y-1">
         {activeSubjects?.map((subject, index) => (
           <FormInputSubjectPart
