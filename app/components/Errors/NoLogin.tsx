@@ -21,6 +21,12 @@ export default function NoLogin() {
         >
           More information
         </Link>
+        <Link
+            href="https://www.copisem.cz"
+            className="btn btn-accent w-1/2 h-16 text-xl text-center"
+        >
+          Czech version <br/> Česká verze
+        </Link>
       </div>
     </div>
   );

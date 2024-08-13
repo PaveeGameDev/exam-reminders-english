@@ -60,10 +60,6 @@ export default async function ExamOverview({
 
   if (!bestExamNote) return;
 
-  const examNotes = await prisma.examNote.findMany({
-    where: { examId: parseInt(params.examId) },
-  });
-
   return (
     <div className="flex justify-center">
       <div className="w-full max-w-[50rem]">

@@ -19,7 +19,7 @@ export default async function ExamOverviewHeader({ exam }: Props) {
       </p>
       <p className="text-4xl font-bold">{subject}</p>
       <p className="text-3xl">
-        {type?.name}
+        {type?.englishName ? type.englishName : type.name}
         {exam.followerId ? " (Private)" : ""}
       </p>
     </div>

@@ -33,10 +33,10 @@ export default async function ExamOverviewFooter({
         <ExamOverviewChangeDate exam={exam} />
         <Share
           btnText="Share this exam"
-          text={`${subject?.name} ${examType?.name} ${new Date(
+          text={`${subject?.name} ${examType?.englishName ? examType.englishName : examType.name} ${new Date(
             exam.date,
-          ).getDate()}.${
-            new Date(exam.date).getMonth() + 1
+          ).getMonth() + 1}.${
+            new Date(exam.date).getDate()
           } ${capitalizeFirstLetter(getDayName(exam.date, "en-US"))}\n${
             bestExamNote.content
           }\nBy: ${shortenName(
