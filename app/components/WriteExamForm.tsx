@@ -33,7 +33,9 @@ export default function WriteExamForm({
       className="flex flex-col space-y-4 bg-base-200 shadow-xl border border-gray-300 p-6 rounded-lg max-w-md w-full"
     >
       <Select options={subjects} id="subjectId" header="Subject" />
-      <Select options={examTypes} id="typeId" header="Type of the exam" />
+      <Select options={examTypes.map((type) => {
+        return {id: type.id, name: type.englishName ? type.englishName : type.name};
+      })} id="typeId" header="Type of the exam" />
       <div className="flex flex-row space-x-3 justify-between">
         <div className="w-1/2">
           <label htmlFor="date" className="font-semibold">

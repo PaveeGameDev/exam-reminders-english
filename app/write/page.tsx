@@ -22,7 +22,6 @@ export default async function Write({ searchParams }: Props) {
   const subjects = await getUserActiveSubject(user);
   //For current database configuration, does not serve different purpose other than hide one value that makes no sense for some time so it can be used later
   const examTypes = await prisma.examType.findMany({
-    where: { NOT: { id: 1 } },
     orderBy: { priority: "desc" },
   });
 

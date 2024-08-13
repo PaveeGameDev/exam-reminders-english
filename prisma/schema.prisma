@@ -1,20 +1,12 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
   provider  = "postgresql"
-  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
 }
-
-// datasource db {
-//   provider = "mysql"
-//   url      = env("DATABASE_URL")
-// }
 
 model Account {
   id                String  @id @default(cuid())
@@ -22,15 +14,14 @@ model Account {
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
+  refresh_token     String?
+  access_token      String?
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.Text
+  id_token          String?
   session_state     String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
@@ -50,15 +41,15 @@ model User {
   emailVerified              DateTime?
   hashedPassword             String?
   image                      String?
-  accounts                   Account[]
-  sessions                   Session[]
   classId                    Int?
-  class                      Class?                       @relation(fields: [classId], references: [id])
-  ExamNote                   ExamNote[]
-  UserExamPreferences        UserExamPreferences[]
-  Exam                       Exam[]
-  ClassSubjectUserPreference ClassSubjectUserPreference[]
   notificationToken          String?
+  accounts                   Account[]
+  ClassSubjectUserPreference ClassSubjectUserPreference[]
+  Exam                       Exam[]
+  ExamNote                   ExamNote[]
+  sessions                   Session[]
+  class                      Class?                       @relation(fields: [classId], references: [id])
+  UserExamPreferences        UserExamPreferences[]
 }
 
 model VerificationToken {
@@ -72,17 +63,18 @@ model VerificationToken {
 model Class {
   id                         Int                          @id @unique
   name                       String?
-  users                      User[]
-  exams                      Exam[]
-  ClassSubjects              ClassSubjects[]
   ClassSubjectUserPreference ClassSubjectUserPreference[]
+  ClassSubjects              ClassSubjects[]
+  exams                      Exam[]
+  users                      User[]
 }
 
 model ExamType {
-  id       Int    @id @default(autoincrement())
-  name     String
-  priority Int
-  Exam     Exam[]
+  id          Int     @id @default(autoincrement())
+  name        String
+  priority    Int
+  englishName String?
+  Exam        Exam[]
 }
 
 model Exam {
@@ -90,25 +82,25 @@ model Exam {
   classId             Int
   date                DateTime
   subjectId           Int
+  examTypeId          Int
+  stateId             Int                   @default(0)
+  followerId          String?
   class               Class                 @relation(fields: [classId], references: [id])
+  examType            ExamType              @relation(fields: [examTypeId], references: [id])
+  Follower            User?                 @relation(fields: [followerId], references: [id])
+  State               State                 @relation(fields: [stateId], references: [id])
   examNotes           ExamNote[]
   UserExamPreferences UserExamPreferences[]
-  examTypeId          Int
-  examType            ExamType              @relation(fields: [examTypeId], references: [id])
-  stateId             Int                   @default(0)
-  State               State                 @relation(fields: [stateId], references: [id])
-  followerId          String?
-  Follower            User?                 @relation(fields: [followerId], references: [id])
 }
 
 model ExamNote {
   id                  Int                   @id @default(autoincrement())
   userId              String
-  user                User                  @relation(fields: [userId], references: [id])
   dateCreated         DateTime
   content             String
   examId              Int
   exam                Exam                  @relation(fields: [examId], references: [id])
+  user                User                  @relation(fields: [userId], references: [id])
   UserExamPreferences UserExamPreferences[]
 }
 
@@ -125,38 +117,38 @@ model SubjectEnglish {
 model State {
   id                  Int                   @id @default(autoincrement())
   name                String
-  UserExamPreferences UserExamPreferences[]
   Exam                Exam[]
+  UserExamPreferences UserExamPreferences[]
 }
 
 model UserExamPreferences {
   id         Int       @id @default(autoincrement())
   examId     Int
-  exam       Exam      @relation(fields: [examId], references: [id])
   userId     String
-  user       User      @relation(fields: [userId], references: [id])
   examNoteId Int?
-  examNote   ExamNote? @relation(fields: [examNoteId], references: [id])
   stateId    Int       @default(0)
+  exam       Exam      @relation(fields: [examId], references: [id])
+  examNote   ExamNote? @relation(fields: [examNoteId], references: [id])
   State      State     @relation(fields: [stateId], references: [id])
+  user       User      @relation(fields: [userId], references: [id])
 }
 
 model ClassSubjects {
   id                         Int                          @id @default(autoincrement())
   classId                    Int
-  Class                      Class                        @relation(fields: [classId], references: [id])
   name                       String
   stateId                    Int                          @default(0)
   ClassSubjectUserPreference ClassSubjectUserPreference[]
+  Class                      Class                        @relation(fields: [classId], references: [id])
 }
 
 model ClassSubjectUserPreference {
   id              Int           @id @default(autoincrement())
   userId          String
-  User            User          @relation(fields: [userId], references: [id])
   classSubjectsId Int
-  Subject         ClassSubjects @relation(fields: [classSubjectsId], references: [id])
   classId         Int?
-  Class           Class?        @relation(fields: [classId], references: [id])
   stateId         Int           @default(0)
+  Class           Class?        @relation(fields: [classId], references: [id])
+  Subject         ClassSubjects @relation(fields: [classSubjectsId], references: [id])
+  User            User          @relation(fields: [userId], references: [id])
 }

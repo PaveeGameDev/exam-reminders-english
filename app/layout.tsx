@@ -9,9 +9,9 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const APP_NAME = "Co Píšem";
-const APP_DEFAULT_TITLE = "Co Píšem";
-const APP_TITLE_TEMPLATE = "Co Píšem";
+const APP_NAME = "Exam Reminders";
+const APP_DEFAULT_TITLE = "Exam Reminders";
+const APP_TITLE_TEMPLATE = "Exam Reminders";
 const APP_DESCRIPTION = "Share your exam dates easily";
 
 export const metadata: Metadata = {
@@ -61,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="cs" className="max-w-full overflow-x-hidden">
+    <html lang="en" className="max-w-full overflow-x-hidden">
       <body className="h-full">
         <AuthProvider>
           <NavBar />

@@ -6,7 +6,7 @@ import { getSubjectNameById } from "@/functions/getSubjectNameById";
 export async function prepareNotification(
   user: User,
 ): Promise<PrepareNotificationResponse> {
-  const title: string = "Tvoje testy/úkoly na zítra";
+  const title: string = "Your exams/homework for tomorrow";
   const tommorowDate = new Date(
     new Date().getFullYear(),
     new Date().getMonth(),
@@ -24,7 +24,7 @@ export async function prepareNotification(
   if (!user.classId) {
     return {
       title: title,
-      text: "Přihlaš se do třídy, aby jsi dostával/a oznámení",
+      text: "Join a class in order to get notifications.",
     };
   }
 
@@ -46,12 +46,12 @@ export async function prepareNotification(
       }
     }
 
-    const textOther = `Test${
-      tomorowOther.length === 1 ? "" : "y"
-    } z: ${tomorowOther.join(", ")}`;
-    const textHomework = `Úkol${
-      tomorowHomework.length === 1 ? "" : "y"
-    } z: ${tomorowHomework.join(", ")}`;
+    const textOther = `Exam${
+      tomorowOther.length === 1 ? "" : "s"
+    } from: ${tomorowOther.join(", ")}`;
+    const textHomework = `Homework${
+      tomorowHomework.length === 1 ? "" : ""
+    } from: ${tomorowHomework.join(", ")}`;
 
     return {
       title: title,
@@ -61,5 +61,5 @@ export async function prepareNotification(
     };
   }
 
-  return { title: title, text: "Nic nepíšeš, užívej!" };
+  return { title: title, text: "You have a free day, enjoy!" };
 }

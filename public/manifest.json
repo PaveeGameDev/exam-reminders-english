@@ -4,8 +4,8 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "Co Píšem",
-    "short_name": "Co Píšem",
+    "name": "Exam Reminders",
+    "short_name": "Exam Reminders",
     "description": "Share your exam dates easily",
     "icons": [
         {

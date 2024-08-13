@@ -35,7 +35,7 @@ export async function joinClass(classId: number) {
     where: { id: Number(classId) },
   });
   if (!classExists) {
-    return { error: `Třída s kódem: ${classId} neexistuje, zkus jiný kód.` };
+    return { error: `Class with id: ${classId} does not exist, try a different id.` };
   }
 
   const updatedUser = await prisma.user.update({
@@ -357,7 +357,7 @@ export async function changeClassSubjectUserPreference(
     }
   }
   revalidatePath(`/`);
-  return { success: "Tvoje aktivní předměty byly uloženy" };
+  return { success: "Your active subjects were saved."};
 }
 
 export async function sendNotificationHandler(user: User) {
