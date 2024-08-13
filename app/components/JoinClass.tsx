@@ -25,24 +25,24 @@ export default function JoinClass() {
           className="flex flex-col items-center"
         >
           <label htmlFor="classId" className="mb-2 text-xl font-semibold">
-            Zapsat se / Vytvořit třídu
+            Join / Create a class
           </label>
           <input
             className="input input-bordered input-primary w-full max-w-xs text-center text-lg"
             type="number"
             id="classId"
             name="classId"
-            placeholder="Např. 123456"
+            placeholder="E.g. 123456"
             required
           />
           <button className="btn btn-primary mt-5 w-full max-w-xs">
-            Zapsat se
+            Join
           </button>
           <Link
             href="/createclass"
             className="btn btn-primary mt-5 w-full max-w-xs"
           >
-            Vytvořit třídu
+            Create
           </Link>
           {afterSubmit && afterSubmit.success && (
             <p className="text-success text-center">{afterSubmit.success}</p>

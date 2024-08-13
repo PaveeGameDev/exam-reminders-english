@@ -4,22 +4,22 @@ export default function NoLogin() {
   return (
     <div className="flex justify-center w-full h-[80vh]">
       <div className="flex flex-col justify-center items-center space-y-3">
-        <h1 className="text-center text-6xl font-semibold">Co Píšem?</h1>
+        <h1 className="text-center text-6xl font-semibold">Exam Reminders</h1>
         <p className="text-center text-2xl">
-          Sdílej své poznámky o budoucích testech s celou třídou.
-          <br /> Jednoduše.
+          Share your notes about the upcoming exams with your whole class.
+          <br /> Easily.
         </p>
         <Link
           href="/api/auth/signin"
           className="btn btn-primary w-1/2 h-16 text-xl text-center"
         >
-          Přihlásit se
+          Log in / sign up
         </Link>
         <Link
           href="/about"
           className="btn btn-accent w-1/2 h-16 text-xl text-center"
         >
-          Zjistit víc
+          More information
         </Link>
       </div>
     </div>

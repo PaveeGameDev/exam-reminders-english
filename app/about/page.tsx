@@ -3,23 +3,21 @@ import Link from "next/link";
 export default function About() {
   return (
     <div className="flex flex-col justify-center items-center space-y-5 mt-10 m-5">
-      <h1 className="text-center text-6xl font-semibold">Co Píšem?</h1>
+      <h1 className="text-center text-6xl font-semibold">Exam Reminders</h1>
       <p className="text-center text-2xl">
-        Co Píšem je webová aplikace co ti ulehčí život. Celá třída může využít
-        toto místo na sdílení poznámek k testům nebo úkolům. <br />
-        <br /> Už nikdy se nestane, že by jsi zapomněl na budoucí test, protože
-        na Co Píšem bude vše přehledně zapsáno. <br />
+        Exam Reminders is a web based application that will make your life easier. Whole class can use this place to share theirs notes about the upcoming exams and homework. <br />
+        <br />You will never forget about an upcoming exam as everything will be accessible on Exam Reminders in an easy way.<br />
         <br />
-        Co Píšem je nejjednodušší způsob jak sdílet kalendář s celou třídou.
+        Exam Reminders is the easiest way to share your calendar with your whole class.
         <br />
         <br />
-        Pojď do toho
+        Go for it.
       </p>
       <Link
         href="/api/auth/signin"
         className="btn btn-primary w-1/2 h-16 text-xl text-center max-w-72"
       >
-        Přihlásit se
+        Log in / sign up
       </Link>
     </div>
   );

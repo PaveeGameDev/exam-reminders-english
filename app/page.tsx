@@ -30,36 +30,34 @@ export default async function Home({ searchParams }: Props) {
   )
     return (
       <ErrorTemplate
-        header="Máš správnou adresu?"
+        header="Do you have a correct URL?"
         buttonLink="/"
-        buttonText="Vrátit se domů"
+        buttonText="Back to the home page"
       >
-        {`Zkontroluj že máš správně adresu. Možná je vyplněný políčko "to" a
-        políčko "from" není, nebo naopak?`}
+        {`Make sure you have a correct URL. Maybe the parameter "to" is filled in and
+        the parameter "from" is not. Maybe the other way around?`}
       </ErrorTemplate>
     );
 
   if (searchParams.wholeHistory && searchParams.wholeHistory !== "1")
     return (
       <ErrorTemplate
-        header="Máš správnou adresu?"
+        header="Do you have the correct URL?"
         buttonLink="/?wholeHistory=1"
-        buttonText="Podívat se na celou historii"
+        buttonText="See whole history"
       >
-        Zkontroluj že máš správně adresu. Někde došlo k chybě, klikni na
-        tlačítko a já to za tebe spravím.
+        Make sure you have the correct URL. Something weird happened, click the button and I will fit it for you.
       </ErrorTemplate>
     );
 
   if (searchParams.wholeHistory && searchParams.from)
     return (
       <ErrorTemplate
-        header="Máš správnou adresu?"
+        header="Do you have a correct URL?"
         buttonLink="/"
-        buttonText="Vrátit se domů"
+        buttonText="Back to the home page"
       >
-        Zkontroluj že máš správně adresu. Pokoušíš se dívat na určené dny a
-        zároveň do celé historie najednou, to tu nevedeme.
+        Make sure you have a correct URL. You are trying to access individual dates and whole history at the same time. We do not allow it. :)
       </ErrorTemplate>
     );
 

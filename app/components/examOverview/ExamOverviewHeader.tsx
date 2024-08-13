@@ -14,13 +14,13 @@ export default async function ExamOverviewHeader({ exam }: Props) {
   return (
     <div className="flex flex-col items-center space-y-3 mb-3">
       <p className="text-4xl underline underline-offset-4">
-        {getFancyDayName(exam.date)} - {exam.date.getDate()}.
-        {exam.date.getMonth() + 1}
+        {getFancyDayName(exam.date, 'en-US' )} - {exam.date.getMonth() + 1}.
+        {exam.date.getDate()}.
       </p>
       <p className="text-4xl font-bold">{subject}</p>
       <p className="text-3xl">
         {type?.name}
-        {exam.followerId ? " (Privátní)" : ""}
+        {exam.followerId ? " (Private)" : ""}
       </p>
     </div>
   );

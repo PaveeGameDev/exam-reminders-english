@@ -11,7 +11,7 @@ export default function BlankDay({ day }: Props) {
         <div className="flex flex-col h-24 justify-center">
           <div className="flex justify-center items-center h-full">
             <p className="capitalize text-2xl text-center h-fit">
-              {getFancyDayName(day, "cs-CZ")}
+              {getFancyDayName(day, "en-US")}
             </p>
           </div>
           <hr className="w-full h-0.5 bg-primary border-primary" />

@@ -28,21 +28,21 @@ export default function AdvertisementManager({ user }: Props) {
   ) {
     advertisements.push(
       <Advertisement
-        header="Koukni na Burzu Opatov"
-        actionButtonText="Zaveď mě tam"
+        header="Take a look at Burza Opatov"
+        actionButtonText="Show it to me"
         actionButtonRedirect="https://burza.gymnazium-opatov.cz"
         showDownBar={true}
         key={1}
       >
         <ul className="list-disc">
           <li>
-            Nakupuj učebnice <p className="font-semibold inline">levně</p>
+            Buy your books <p className="font-semibold inline">cheaply</p>
           </li>
           <li>
-            Prodávej své učebnice{" "}
-            <p className="font-semibold inline">jednoduše</p>
+            Sell your books{" "}
+            <p className="font-semibold inline">easily</p>
           </li>
-          <li>Měj vystaráno ještě před prázdninami</li>
+          <li>Have it ready before the holidays</li>
         </ul>
       </Advertisement>,
     );
@@ -51,22 +51,21 @@ export default function AdvertisementManager({ user }: Props) {
   if (os !== "MacOS")
     advertisements.push(
       <Advertisement
-        header="Stáhni si Neoneer"
-        actionButtonText="Ukaž mi jak"
+        header="Download Neoneer"
+        actionButtonText="Show it to me"
         actionButtonRedirect="https://play.google.com/store/apps/details?id=com.Pavee.NeonRush"
         showDownBar={true}
         key={0}
       >
         <ul className="list-disc ml-10">
           <li>
-            Neoneer je{" "}
-            <p className="font-semibold inline">skvělá mobilní hra</p> na dlouhé
-            chvíle
+            Neoneer is a{" "}
+            <p className="font-semibold inline">fantastic mobile game</p>.
           </li>
-          <li>Objevuj propracované úrovně, co se ti mění před očima</li>
+          <li>Discover handcrafted levels that change in front of your eyes.</li>
           <li>
             <p className="font-semibold inline">
-              Podpoříš tím vývojáře Co Píšem
+              Support the author of Exam Reminders.
             </p>
           </li>
         </ul>
@@ -76,20 +75,18 @@ export default function AdvertisementManager({ user }: Props) {
   if (!isPwa) {
     return (
       <Advertisement
-        header="Stáhni si Co Píšem na plochu"
-        actionButtonText="Ukaž mi jak"
+        header="Download Exam Reminders to your desktop"
+        actionButtonText="Show it to me"
         actionButtonRedirect="/settings"
         showDownBar={true}
       >
         <ul className="list-disc">
           <li>
-            <p className="font-semibold inline">Nejrychlejší</p> přístup k Co
-            Píšem
+            <p className="font-semibold inline">Fastest</p> way to access Exam Reminders
           </li>
-          <li>Nikdy nezapomeneš na úkol či test</li>
+          <li>You will never forget your homework</li>
           <li>
-            Nezabírá to <p className="font-semibold inline">žádné místo</p> na
-            tvém zařízení
+            I takes <p className="font-semibold inline">no storage space</p> on your device
           </li>
         </ul>
       </Advertisement>
@@ -98,15 +95,15 @@ export default function AdvertisementManager({ user }: Props) {
   if (!hasNotifications) {
     return (
       <Advertisement
-        header="Aktivuj si oznámení"
-        actionButtonText="Ukaž mi jak"
+        header="Activate notifications"
+        actionButtonText="Show it to me"
         actionButtonRedirect="/settings"
         showDownBar={true}
       >
         <ul className="list-disc ml-10">
-          <li>Nikdy nezapomeneš na úkol či test</li>
-          <li>Každý den v 16:00 ti Co Píšem napíše z čeho zítra píšeš</li>
-          <li>Zapnout oznámení trvá pouze 2 kliky</li>
+          <li>You will never forget any exam or homework</li>
+          <li>Every day at 4:00 PM you will receive a notification</li>
+          <li>It takes just two clicks to set it up</li>
         </ul>
       </Advertisement>
     );

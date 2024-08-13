@@ -34,21 +34,20 @@ export default async function ExamList({ exams, user, datesToShow }: Props) {
   ) {
     dayViewWrappers.push(
       <Advertisement
-        header="Nic nepíšeš, je to možný?"
-        actionButtonText="Přidat test"
+        header="No exams this week? Is it real?"
+        actionButtonText="Add an exam"
         actionButtonRedirect="/write"
         showDownBar={true}
         key="addTestAdvert"
       >
         <ul className="list-disc ml-10">
-          <li>Možná jsi šťastlivec a vážně nic nepíšeš.</li>
+          <li>Maybe your are lucky and there are really no exams ahead</li>
           <li>
-            Možná tu <p className="font-semibold inline">schází nějaký test</p>,
-            přidej ho.
+            Maybe <p className="font-semibold inline">there is a test not written here</p>,
+            add it.
           </li>
           <li>
-            <p className="font-semibold inline">Pozvi spolužáky</p> a zapisujte
-            testy spolu.
+            <p className="font-semibold inline">Invite your schoolmates</p> and write down upcoming exams together.
           </li>
         </ul>
       </Advertisement>,
@@ -63,22 +62,20 @@ export default async function ExamList({ exams, user, datesToShow }: Props) {
     if (users && users.length <= 10 && !plantedAdvert) {
       dayViewWrappers.push(
         <Advertisement
-          header="Je tady nějak pusto"
-          actionButtonText="Sdílej Co Píšem"
+          header="It is fairly quiet here"
+          actionButtonText="Share Exam Reminders"
           showDownBar={true}
           key="invitePeopleAdvert"
           extras="share"
         >
           <ul className="list-disc ml-10">
-            <li>Co Píšem funguje nejlépe ve více lidech.</li>
+            <li>Exam Reminders work best with more people contributing.</li>
             <li>
-              Celá třída se může{" "}
-              <p className="font-semibold inline">snadno připojit</p>, stačí jen
-              poslat odkaz.
+              Your whole class can{" "}
+              <p className="font-semibold inline">easily join</p>, just share them the link.
             </li>
             <li>
-              <p className="font-semibold inline">Pozvi spolužáky</p> a
-              zapisujte testy spolu.
+              <p className="font-semibold inline">Invite your schoolmates</p> and write down upcoming exams together.
             </li>
           </ul>
         </Advertisement>,

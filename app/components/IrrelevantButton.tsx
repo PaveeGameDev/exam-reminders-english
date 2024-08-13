@@ -37,18 +37,18 @@ export default function IrrelevantButton({ exam, user, isIndividual }: Props) {
         className="btn btn-outline btn-primary w-full bg-white"
       >
         <p className="text-black">
-          {isIndividual ? "Odstranit pro mě" : "Odstranit pro všechny"}
+          {isIndividual ? "Delete for me" : "Delete for everyone"}
         </p>
       </button>
       <DialogBox
-        header={isIndividual ? "Odstranit pro mě" : "Odstranit pro všechny"}
-        text={`Opravdu chceš odstranit toto dne ${exam.date.getDate()}.${
-          exam.date.getMonth() + 1
-        } ${isIndividual ? "pro sebe" : "pro všechny"}?`}
+        header={isIndividual ? "Delete for me" : "Delete for everyone"}
+        text={`Do you really want to delete this exam on ${exam.date.getMonth() + 1}.${
+          exam.date.getDate() + '.'
+        } ${isIndividual ? "for yourself" : "for everyone"}?`}
         confirmAction={onConfirm}
         id={isIndividual ? "irrelevant_modal_alone" : "irrelevant_modal_all"}
-        cancelText="Ponechat"
-        confirmText={isIndividual ? "Odstranit" : "Odstranit pro všechny"}
+        cancelText="NO"
+        confirmText={isIndividual ? "Delete for me" : "Delete for everyone"}
       />
     </div>
   );

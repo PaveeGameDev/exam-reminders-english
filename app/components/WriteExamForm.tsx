@@ -32,12 +32,12 @@ export default function WriteExamForm({
       }}
       className="flex flex-col space-y-4 bg-base-200 shadow-xl border border-gray-300 p-6 rounded-lg max-w-md w-full"
     >
-      <Select options={subjects} id="subjectId" header="Předmět" />
-      <Select options={examTypes} id="typeId" header="Typ testu" />
+      <Select options={subjects} id="subjectId" header="Subject" />
+      <Select options={examTypes} id="typeId" header="Type of the exam" />
       <div className="flex flex-row space-x-3 justify-between">
         <div className="w-1/2">
           <label htmlFor="date" className="font-semibold">
-            Datum
+            Date
           </label>
           <input
             type="date"
@@ -53,7 +53,7 @@ export default function WriteExamForm({
         </div>
         <div className="flex flex-col items-end">
           <label htmlFor="isPublic" className="font-semibold text-right">
-            Pro všechny
+            Visible to everyone
           </label>
           <input
             type="checkbox"
@@ -65,20 +65,20 @@ export default function WriteExamForm({
         </div>
       </div>
       <label htmlFor="content" className="font-semibold">
-        Info ohledně testu
+        Info about the exam
       </label>
       <textarea
         rows={4}
         id="content"
         name="content"
-        placeholder="Co bude v testu?"
+        placeholder="What is going to be in the exam?"
         maxLength={1000}
         required
         className="textarea input-bordered w-full text-lg"
       />
 
       <button type="submit" className="btn btn-primary mt-2">
-        Zapsat
+        Write it down
       </button>
       {afterSubmit && afterSubmit.success && (
         <p className="text-success text-center">{afterSubmit.success}</p>

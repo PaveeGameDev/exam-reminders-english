@@ -32,7 +32,7 @@ export default function ExamOverviewAddNote({ user, examId }: Props) {
         rows={4}
         id="content"
         name="content"
-        placeholder="Co tu schází?"
+        placeholder="What would you like to add?"
         required
         maxLength={1000}
         className="rounded-3xl border-black border-2 p-3 px-5 text-lg"
@@ -40,7 +40,7 @@ export default function ExamOverviewAddNote({ user, examId }: Props) {
       <div className="flex w-full flex-row justify-end">
         <div className="rounded-3xl flex justify-center items-center bg-primary border-2 border-black">
           <button type="submit" className="text-lg p-2 px-10 text-center">
-            Připsat
+            Add it
           </button>
         </div>
       </div>

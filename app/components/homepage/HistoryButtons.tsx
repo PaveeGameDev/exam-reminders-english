@@ -16,7 +16,7 @@ export default function HistoryButtons({ relevantQueryParams }: Props) {
           !relevantQueryParams.to && !relevantQueryParams.wholeHistory,
         )}
         url="/"
-        text="Tento měsíc"
+        text="This month"
       />
       <HistoryButton
         isActive={Boolean(relevantQueryParams.from)}
@@ -27,12 +27,12 @@ export default function HistoryButtons({ relevantQueryParams }: Props) {
           today.toISOString(),
           1,
         ).toISOString()}`}
-        text="Minulé 2 týdny"
+        text="Last two weeks"
       />
       <HistoryButton
         isActive={Boolean(relevantQueryParams.wholeHistory)}
         url="/?wholeHistory=1"
-        text="Celá historie"
+        text="Whole history"
       />
     </div>
   );

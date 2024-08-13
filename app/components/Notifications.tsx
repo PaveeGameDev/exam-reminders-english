@@ -113,16 +113,15 @@ export default function Notifications({
   return (
     <div className="card bg-base-200 shadow-xl border border-gray-300 flex items-center justify-center">
       <div className="card-body text-center flex items-center">
-        <h2 className="card-title justify-center w-full">Aktivuj notifikace</h2>
+        <h2 className="card-title justify-center w-full">Activate notifications</h2>
         <p>
-          Budeš dostávat notifikace jeden den před tvým testem/úkolem a nikdy na
-          nic už nezapomeneš.
+          You will receive a notification one day before your exam/homework and you will forget no more.
         </p>
         <button
           onClick={requestNotifications}
           className="btn btn-primary mt-5 w-full max-w-xs"
         >
-          Aktivovat notifikace
+          Activate notifications
         </button>
         <p className="break-words w-60">{moreInfo}</p>
       </div>

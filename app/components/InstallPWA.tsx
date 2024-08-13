@@ -19,11 +19,10 @@ export default function InstallPWA() {
     <div className="card bg-base-200 shadow-xl border border-gray-300 flex items-center justify-center">
       <div className="card-body text-center">
         <h2 className="card-title justify-center w-full">
-          Přidej si Co Píšem na plochu
+          Add Exam-reminders to your desktop.
         </h2>
         <p>
-          Z této webovky se stane aplikace a můžeš ji používat o dost
-          jednodušeji.
+          An easy accessible application will be created from this website.
         </p>
 
         {os === "MacOS" ? (

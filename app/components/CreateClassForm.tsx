@@ -95,7 +95,7 @@ export default function CreateClassForm({ defaultSubjects, user }: Props) {
         <FormInputSubjectPart
           key={999}
           id={999}
-          content="Přidej svůj předmět"
+          content="Add your subject"
           onDelete={(id: number) => onDelete(id)}
           onCreate={(content: string) => onCreate(content)}
           isCreational={true}
@@ -103,7 +103,7 @@ export default function CreateClassForm({ defaultSubjects, user }: Props) {
         />
       </div>
       <button type="submit" className="btn btn-primary mt-2">
-        Vytvořit
+        Create
       </button>
       {afterSubmit && afterSubmit.success && (
         <p className="text-success text-center">{afterSubmit.success}</p>

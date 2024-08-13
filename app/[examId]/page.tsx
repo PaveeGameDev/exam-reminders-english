@@ -24,11 +24,11 @@ export default async function ExamOverview({
   if (!parseInt(params.examId)) {
     return (
       <ErrorTemplate
-        header="Máš správnou adresu?"
+        header="Do you have a correct URL?"
         buttonLink="/"
-        buttonText="Vrátit se domů"
+        buttonText="Back to the home page"
       >
-        Zkontroluj že máš správně adresu. Nemáš tam náhodou velká písmena?
+        Make sure you have a correct URL. Maybe there are capital letters somewhere.
       </ErrorTemplate>
     );
   }
@@ -38,21 +38,21 @@ export default async function ExamOverview({
   if (!exam)
     return (
       <ErrorTemplate
-        header="Takový test neexistuje"
+        header="This test does not exist"
         buttonLink="/"
-        buttonText="Vrátit se domů"
+        buttonText="Back to the home page"
       >
-        Toto číslo úkolu neexistuje, možná překlik?
+        There is no exam with this id.
       </ErrorTemplate>
     );
   if (exam.classId !== user.classId)
     return (
       <ErrorTemplate
-        header="Toto není tvůj test"
+        header="This is not your exam"
         buttonLink="/"
-        buttonText="Vrátit se domů"
+        buttonText="Back to the home page"
       >
-        Toto není test pro tvojí třídu, jsi ve správné třídě?
+        This is not an exam in your class. Are you in a correct class?
       </ErrorTemplate>
     );
 

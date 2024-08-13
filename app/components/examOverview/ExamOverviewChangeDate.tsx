@@ -39,13 +39,13 @@ export default function ExamOverviewChangeDate({ exam }: Props) {
         onClick={onClick}
         className="btn btn-outline btn-primary w-full bg-white"
       >
-        <p className="text-black">Změnit datum</p>
+        <p className="text-black">Change the date</p>
       </button>
       <PopUpBoxDate
-        header="Změnit datum testu"
+        header="Change the date"
         id="change_date_modal"
-        cancelText="Ponechat"
-        confirmText="Změnit datum"
+        cancelText="NO"
+        confirmText="Change the date"
         confirmAction={(date) => onConfirm(date)}
         date={exam.date}
       />

@@ -64,8 +64,8 @@ export default function SubjectPreference({
       }}
       className="flex flex-col space-y-4 bg-base-200 shadow-xl border border-gray-300 p-6 rounded-lg max-w-md w-full"
     >
-      <h2 className="card-title justify-center w-full">Tvoje předměty</h2>
-      <p>Tvoje předměty</p>
+      <h2 className="card-title justify-center w-full">Your subjects</h2>
+      <p>Active subjects</p>
       <div className="w-full grid grid-cols-2 gap-x-2 gap-y-1">
         {activeSubjectsAfter?.map((subject, index) => (
           <FormInputSubjectPart
@@ -77,7 +77,7 @@ export default function SubjectPreference({
           />
         ))}
       </div>
-      <p>Neaktivní předměty</p>
+      <p>Disabled subjects</p>
       <div className="w-full grid grid-cols-2 gap-x-2 gap-y-1">
         {disabledSubjectsAfter?.map((subject, index) => (
           <FormInputSubjectPart
@@ -91,7 +91,7 @@ export default function SubjectPreference({
         ))}
       </div>
       <button type="submit" className="btn btn-primary mt-5 w-full">
-        Uložit
+        Save
       </button>
       {afterSubmit && afterSubmit.success && (
         <p className="text-success text-center">{afterSubmit.success}</p>
